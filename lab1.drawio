@@ -1,0 +1,180 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.3.0" pages="4">
+  <diagram name="Use Case Diagram" id="zVZYlBlcLOmN-olEGBuj">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Користувач (Творець)" vertex="1">
+          <mxGeometry height="60" width="30" x="640" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Новий користувач" vertex="1">
+          <mxGeometry height="60" width="30" x="640" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Створення нового чату" vertex="1">
+          <mxGeometry height="60" width="160" x="840" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Додавання користувачів" vertex="1">
+          <mxGeometry height="60" width="160" x="840" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Реєстрація у Discord" vertex="1">
+          <mxGeometry height="60" width="160" x="840" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-6" edge="1" parent="1" source="FgIISvWI-X0JGbtEjlMF-1" style="edgeStyle=none;html=1;endArrow=none;" target="FgIISvWI-X0JGbtEjlMF-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-7" edge="1" parent="1" source="FgIISvWI-X0JGbtEjlMF-1" style="edgeStyle=none;html=1;endArrow=none;" target="FgIISvWI-X0JGbtEjlMF-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-8" edge="1" parent="1" source="FgIISvWI-X0JGbtEjlMF-2" style="edgeStyle=none;html=1;endArrow=none;" target="FgIISvWI-X0JGbtEjlMF-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FgIISvWI-X0JGbtEjlMF-9" edge="1" parent="1" source="FgIISvWI-X0JGbtEjlMF-4" style="edgeStyle=none;html=1;endArrow=open;dashed=1;" target="FgIISvWI-X0JGbtEjlMF-5" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Class Diagram" id="0fM1qsuyd2YPuFpM9x22">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="class_user" value="User&#xa;--&#xa;- userId: Int&#xa;- username: String&#xa;- isRegistered: Bool&#xa;--&#xa;+ register()&#xa;+ sendMessage()&#xa;+ joinChat()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLastChild=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class_chat" value="Chat&#xa;--&#xa;- chatId: Int&#xa;- name: String&#xa;- members: List&lt;User&gt;&#xa;--&#xa;+ addMember(User)&#xa;+ getHistory()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLastChild=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class_msg" value="Message&#xa;--&#xa;- msgId: Int&#xa;- text: String&#xa;- timestamp: Date&#xa;--&#xa;+ send()&#xa;+ formatDisplay()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLastChild=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class_db" value="Database&#xa;--&#xa;- connectionStr: String&#xa;--&#xa;+ saveMessage(Message)&#xa;+ fetchMessages(chatId)&#xa;+ saveUser(User)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLastChild=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="320" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c1" value="1..*" style="edgeStyle=none;html=1;endArrow=none;" edge="1" parent="1" source="class_user" target="class_chat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c2" value="1..*" style="edgeStyle=none;html=1;endArrow=diamondThin;endFill=0;" edge="1" parent="1" source="class_msg" target="class_chat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c3" value="saves" style="edgeStyle=none;html=1;endArrow=classic;" edge="1" parent="1" source="class_msg" target="class_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Activity Diagram" id="AR57-jgocVvGhUNFn3ga">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="40" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="act1" value="Користувач вводить&#xa;нове повідомлення" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;" vertex="1" parent="1">
+          <mxGeometry x="135" y="110" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act2" value="Сервер отримує&#xa;дані та ідентифікує чат" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;" vertex="1" parent="1">
+          <mxGeometry x="135" y="210" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act3" value="Збереження історії&#xa;повідомлень в БД" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;" vertex="1" parent="1">
+          <mxGeometry x="135" y="310" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act4" value="Доставка повідомлення&#xa;всім онлайн-учасникам" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;" vertex="1" parent="1">
+          <mxGeometry x="135" y="410" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="510" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ea1" style="edgeStyle=none;html=1;endArrow=classic;" edge="1" parent="1" source="start" target="act1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea2" style="edgeStyle=none;html=1;endArrow=classic;" edge="1" parent="1" source="act1" target="act2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea3" style="edgeStyle=none;html=1;endArrow=classic;" edge="1" parent="1" source="act2" target="act3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea4" style="edgeStyle=none;html=1;endArrow=classic;" edge="1" parent="1" source="act3" target="act4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea5" style="edgeStyle=none;html=1;endArrow=classic;" edge="1" parent="1" source="act4" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Sequence Diagram" id="VsnR22lk78_j0zNT29Kv">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ll_user1" value="User 1 (Sender)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_sys" value="Discord Server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_db" value="Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_user2" value="Новий Користувач" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="act_u1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="ll_user1">
+          <mxGeometry x="45" y="80" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act_s1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="ll_sys">
+          <mxGeometry x="45" y="80" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_db1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="ll_db">
+          <mxGeometry x="45" y="100" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sq1" value="send(message)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" edge="1" parent="1" source="act_u1" target="act_s1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="95" y="120" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sq2" value="saveMessage(msg)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" edge="1" parent="1" source="act_s1" target="act_db1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="140" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sq3" value="saved OK" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=1;" edge="1" parent="1" source="act_db1" target="act_s1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act_u2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="ll_user2">
+          <mxGeometry x="55" y="240" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_s2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="ll_sys">
+          <mxGeometry x="45" y="240" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_db2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="ll_db">
+          <mxGeometry x="45" y="260" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sq4" value="joinChat(chatId)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=1;entryY=0;" edge="1" parent="1" source="act_u2" target="act_s2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="695" y="280" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sq5" value="getHistory(chatId)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;" edge="1" parent="1" source="act_s2" target="act_db2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="300" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sq6" value="messages[]" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=1;" edge="1" parent="1" source="act_db2" target="act_s2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sq7" value="displayHistory(messages[])" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=1;exitY=1;" edge="1" parent="1" source="act_s2" target="act_u2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="695" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
