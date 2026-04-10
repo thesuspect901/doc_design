@@ -1,0 +1,144 @@
+<!-- Lab3 Pull Request -->
+@model IEnumerable<lab3_doc_design.Models.Message>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Discord MVC</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f3f5;
+margin:0;
+}
+
+.header{
+background:#5865F2;
+color:white;
+padding:20px;
+font-size:24px;
+}
+
+.container{
+width:1000px;
+margin:30px auto;
+}
+
+.btn{
+background:#5865F2;
+color:white;
+padding:10px 20px;
+text-decoration:none;
+border-radius:6px;
+}
+
+table{
+width:100%;
+background:white;
+border-collapse:collapse;
+margin-top:20px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+th{
+text-align:left;
+padding:15px;
+background:#f8f9fa;
+}
+
+td{
+padding:15px;
+border-top:1px solid #eee;
+}
+
+.avatar{
+width:35px;
+height:35px;
+border-radius:50%;
+background:#5865F2;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+}
+
+.actions a{
+margin-right:10px;
+text-decoration:none;
+}
+
+.edit{
+color:#5865F2;
+}
+
+.delete{
+color:#ed4245;
+}
+
+.row{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+💬 Discord Messages
+</div>
+
+<div class="container">
+
+<a class="btn" href="/Message/Create">+ New Message</a>
+
+<table>
+
+<tr>
+<th>User</th>
+<th>Message</th>
+<th>Time</th>
+<th>Action</th>
+</tr>
+
+@foreach (var item in Model)
+{
+<tr>
+
+<td>
+<div class="row">
+<div class="avatar">
+@item.UserName.Substring(0,1)
+</div>
+
+@item.UserName
+</div>
+</td>
+
+<td>@item.Text</td>
+
+<td>@item.Timestamp</td>
+
+<td class="actions">
+
+<a class="edit" href="/Message/Edit/@item.Id">Edit</a>
+
+<a class="delete" href="/Message/Delete/@item.Id">Delete</a>
+
+</td>
+
+</tr>
+}
+
+</table>
+
+</div>
+
+</body>
+</html>
