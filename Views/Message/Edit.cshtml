@@ -1,0 +1,70 @@
+@model lab3_doc_design.Models.Message
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Message</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f2f3f5;
+}
+
+.container{
+width:600px;
+margin:50px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+button{
+background:#5865F2;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>✏️ Edit Message</h2>
+
+<form method="post">
+
+<input type="hidden" name="Id" value="@Model.Id" />
+
+<label>User</label>
+<input name="UserName" value="@Model.UserName" />
+
+<label>Message</label>
+<input name="Text" value="@Model.Text" />
+
+<label>Chat</label>
+<input name="ChatId" value="@Model.ChatId" />
+
+<button type="submit">Save</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

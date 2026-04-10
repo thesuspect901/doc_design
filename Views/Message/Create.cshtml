@@ -1,0 +1,136 @@
+@model lab3_doc_design.Models.Message
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Message</title>
+
+<style>
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f2f3f5;
+margin:0;
+}
+
+.header{
+background:#5865F2;
+color:white;
+padding:20px;
+font-size:22px;
+}
+
+.container{
+width:600px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.title{
+font-size:24px;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-bottom:5px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
+}
+
+input:focus{
+outline:none;
+border-color:#5865F2;
+}
+
+.btn{
+background:#5865F2;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+}
+
+.btn:hover{
+background:#4752c4;
+}
+
+.back{
+display:inline-block;
+margin-top:15px;
+color:#5865F2;
+text-decoration:none;
+}
+
+.icon{
+font-size:20px;
+margin-right:8px;
+}
+
+.row{
+display:flex;
+align-items:center;
+margin-bottom:15px;
+}
+
+.avatar{
+width:40px;
+height:40px;
+border-radius:50%;
+background:#5865F2;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-right:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+💬 Discord MVC
+</div>
+
+<div class="container">
+
+<div class="title">✉️ Send Message</div>
+
+<form method="post">
+
+<label>👤 User Name</label>
+<input type="text" name="UserName" placeholder="Enter username" />
+
+<label>💬 Message</label>
+<input type="text" name="Text" placeholder="Type your message..." />
+
+<label>📁 Chat Id</label>
+<input type="number" name="ChatId" value="1" />
+
+<button class="btn" type="submit">Send Message</button>
+
+</form>
+
+<a class="back" href="/Message">← Back to messages</a>
+
+</div>
+
+</body>
+</html>
