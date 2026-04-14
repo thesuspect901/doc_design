@@ -1,0 +1,10 @@
+{'year': '2021', 'leading_cause': 'All Other Causes', 'sex': 'Male', 'race_ethnicity': 'Hispanic', 'deaths': '1695', 'death_rate': '141.8', 'age_adjusted_death_rate': '162.7'}
+{'year': '2021', 'leading_cause': 'Malignant Neoplasms (Cancer: C00-C97)', 'sex': 'Female', 'race_ethnicity': 'Non-Hispanic White', 'deaths': '2427', 'death_rate': '177.6', 'age_adjusted_death_rate': '112.8'}
+{'year': '2021', 'leading_cause': 'Influenza (Flu) and Pneumonia (J09-J18)', 'sex': 'Male', 'race_ethnicity': 'Non-Hispanic Black', 'deaths': '196', 'death_rate': '23.2', 'age_adjusted_death_rate': '22.5'}
+{'year': '2021', 'leading_cause': 'Covid-19', 'sex': 'Female', 'race_ethnicity': 'Hispanic', 'deaths': '966', 'death_rate': '76.1', 'age_adjusted_death_rate': '66.8'}
+{'year': '2021', 'leading_cause': 'Accidents Except Drug Poisoning (V01-X39, X43, X45-X59, Y85-Y86)', 'sex': 'Male', 'race_ethnicity': 'Non-Hispanic White', 'deaths': '266', 'death_rate': '20.1', 'age_adjusted_death_rate': '16.6'}
+{'year': '2021', 'leading_cause': 'Diseases of Heart (I00-I09, I11, I13, I20-I51)', 'sex': 'Female', 'race_ethnicity': 'Asian and Pacific Islander', 'deaths': '607', 'death_rate': '90.4', 'age_adjusted_death_rate': '70.3'}
+{'year': '2021', 'leading_cause': 'All Other Causes', 'sex': 'Female', 'race_ethnicity': 'Non-Hispanic Black', 'deaths': '1993', 'death_rate': '199.1', 'age_adjusted_death_rate': '151'}
+{'year': '2021', 'leading_cause': 'Accidents Except Drug Poisoning (V01-X39, X43, X45-X59, Y85-Y86)', 'sex': 'Female', 'race_ethnicity': 'Non-Hispanic White', 'deaths': '213', 'death_rate': '15.6', 'age_adjusted_death_rate': '9.2'}
+{'year': '2021', 'leading_cause': 'Diabetes Mellitus (E10-E14)', 'sex': 'Male', 'race_ethnicity': 'Non-Hispanic White', 'deaths': '263', 'death_rate': '19.9', 'age_adjusted_death_rate': '14.8'}
+{'year': '2021', 'leading_cause': 'Cerebrovascular Disease (Stroke: I60-I69)', 'sex': 'Female', 'race_ethnicity': 'Hispanic', 'deaths': '265', 'death_rate': '20.9', 'age_adjusted_death_rate': '18'}
